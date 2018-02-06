@@ -127,6 +127,5 @@ int main()
       cout << "lovely " << output[i] << endl;
     }
   }
-
   return 0;
 }
