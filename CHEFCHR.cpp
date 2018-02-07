@@ -17,99 +17,99 @@ int main()
   {
     count = 0;
     getline(cin, s);
-    if(s.find("chef") < s.length())
+    if(s.find("chef") != string::npos)
     {
       count++;
     }
-    if(s.find("chfe") < s.length())
+    if(s.find("chfe") != string::npos)
     {
       count++;
     }
-    if(s.find("cehf") < s.length())
+    if(s.find("cehf") != string::npos)
     {
       count++;
     }
-    if(s.find("cefh") < s.length())
+    if(s.find("cefh") != string::npos)
     {
       count++;
     }
-    if(s.find("cfeh") < s.length())
+    if(s.find("cfeh") != string::npos)
     {
       count++;
     }
-    if(s.find("cfhe") < s.length())
+    if(s.find("cfhe") != string::npos)
     {
       count++;
     }
-    if(s.find("hcef") < s.length())
+    if(s.find("hcef") != string::npos)
     {
       count++;
     }
-    if(s.find("hcfe") < s.length())
+    if(s.find("hcfe") != string::npos)
     {
       count++;
     }
-    if(s.find("hecf") < s.length())
+    if(s.find("hecf") != string::npos)
     {
       count++;
     }
-    if(s.find("hefc") < s.length())
+    if(s.find("hefc") != string::npos)
     {
       count++;
     }
-    if(s.find("hfec") < s.length())
+    if(s.find("hfec") != string::npos)
     {
       count++;
     }
-    if(s.find("hfce") < s.length())
+    if(s.find("hfce") != string::npos)
     {
       count++;
     }
-    if(s.find("echf") < s.length())
+    if(s.find("echf") != string::npos)
     {
       count++;
     }
-    if(s.find("ecfh") < s.length())
+    if(s.find("ecfh") != string::npos)
     {
       count++;
     }
-    if(s.find("ehcf") < s.length())
+    if(s.find("ehcf") != string::npos)
     {
       count++;
     }
-    if(s.find("ehfc") < s.length())
+    if(s.find("ehfc") != string::npos)
     {
       count++;
     }
-    if(s.find("efch") < s.length())
+    if(s.find("efch") != string::npos)
     {
       count++;
     }
-    if(s.find("efhc") < s.length())
+    if(s.find("efhc") != string::npos)
     {
       count++;
     }
-    if(s.find("fche") < s.length())
+    if(s.find("fche") != string::npos)
     {
       count++;
     }
-    if(s.find("fceh") < s.length())
+    if(s.find("fceh") != string::npos)
     {
       count++;
     }
-    if(s.find("fhce") < s.length())
+    if(s.find("fhce") != string::npos)
     {
       count++;
     }
-    if(s.find("fhec") < s.length())
+    if(s.find("fhec") != string::npos)
     {
       count++;
     }
-    if(s.find("fech") < s.length())
+    if(s.find("fech") != string::npos)
     {
       count++;
     }
-    if(s.find("fehc") < s.length())
+    if(s.find("fehc") != string::npos)
     {
       count++;
     }
