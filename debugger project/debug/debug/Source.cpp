@@ -1,56 +1,103 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-int primefactors(long);
+int isChef(char);
+int countChef(string);
 
 int main()
 {
+	int T;  //test counter
 
-	long n;
-	cin >> n;
-	long i = 2;
-	while (n)
+	string s; //input string
+	int *output;  //saves the outputs
+	char buffer;  //nullifies the newline after int input
+
+	cin >> T;
+	cin >> buffer;
+
+	output = new int[T];
+
+	for (int i = 0; i < T; i++)
 	{
-		if (primefactors(i) == 1)
-		{
-			// cout << i << endl;
-			n--;
-		}
-		i++;
+		getline(cin, s);
+		output[i] = countChef(s);
 	}
-	cout << i - 1;
-	return 0;
-}
 
-int primefactors(long n)
-{
-	long i = 2, count = 0;
-	while (n != 1)
+	for (int i = 0; i < T; i++)
 	{
-		if (n % i == 0)
+		if (output[i] == 0)
 		{
-			count++;
-			if (count >= 2)
-			{
-				return 1;
-			}
-			n = n / i;
+			cout << "normal" << endl;
 		}
 		else
 		{
-			if (count >= 2)
-			{
-				return 1;
-			}
-			count = 0;
-			i++;
+			cout << "lovely" << output[i] << endl;
 		}
 	}
+	return 0;
+}
 
-	if (count >= 2)
+int isChef(char c)
+{
+	switch (c)
 	{
-		return 1;
+	case 'c':
+	case 'h':
+	case 'e':
+	case 'f': return 1;
 	}
 	return 0;
+}
+
+int countChef(string s)
+{
+	int i = 0;  //string iterator
+	string word;  //a temporary string that will store the occurence of the chef combination
+	int count = 0;
+
+	while (i < s.length())
+	{
+		word = "";
+
+		if (isChef(s[i]))
+		{
+			word.append(1, s[i]);
+			if (word.find(s[i + 1]) > word.length() && isChef(s[i + 1]))
+			{
+				word.append(1, s[i + 1]);
+				if (word.find(s[i + 2]) > word.length() && isChef(s[i + 2]))
+				{
+					word.append(1, s[i + 2]);
+					if (word.find(s[i + 3]) > word.length() && isChef(s[i + 3]))
+					{
+						word.append(1, s[i + 3]);
+						if (isChef(s[i + 4]))
+						{
+							i++;
+						}
+						else
+						{
+							i += 5;
+						}
+						count++;
+					}
+					else
+					{
+						i += 4;
+					}
+				}
+				else
+				{
+					i += 3;
+				}
+			}
+			else
+			{
+				i += 2;
+			}
+		}
+	}
+	return count;
 }

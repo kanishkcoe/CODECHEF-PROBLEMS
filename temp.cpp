@@ -1,18 +1,19 @@
 #include<iostream>
 #include <string>
+#include <unordered_set>
 
 using namespace std;
 
 int main()
 {
-  string s = "kanishk debnath";
-  if(s.find("yup") != string::npos)
+  unordered_set<int> t = {1, 2, 30};
+  if(t.find == end)
   {
-    cout << "yes" << endl;
+    cout << "not here." << endl;
   }
   else
   {
-      cout << "no" << endl;
+    cout << "here" << endl;
   }
   return 0;
 }
