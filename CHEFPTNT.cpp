@@ -41,12 +41,40 @@ int main()
     for(int k = 0; k < M; k++)
     {
       if(k % 2 == 0)
-        odd -= X;
+      {
+        if(X <= odd)
+        {
+          odd -= X;
+          N -= X;
+        }
+        else
+        {
+          if(odd > 0)
+          {
+            odd--;
+            N--;
+          }
+        }
+      }
       else
-        even -= X;
+      {
+        if(X <= even)
+        {
+          even -= X;
+          N -= X;
+        }
+        else
+        {
+          if(even > 0)
+          {
+            even--;
+            N--;
+          }
+        }
+      }
     }
 
-    if(even <= 0 && odd <= 0)
+    if(even <= 0 && odd <= 0 && N == 0)
     {
       output[i] = 1;
     }
