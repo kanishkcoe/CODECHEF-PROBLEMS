@@ -30,6 +30,11 @@ int main()
     getline(cin, s);
     if(i == 0)
       s = buffer + s;
+    if(N > K)
+    {
+      output[i] = 0;
+      continue;
+    }
     // finding number of even workers and odd workers
     for(int j = 0; j < K; j++)
     {
