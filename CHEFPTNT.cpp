@@ -76,7 +76,7 @@ int main()
         break;
     }
 
-    if(even <= 0 && odd <= 0)
+    if(N == 0)
     {
       output[i] = 1;
     }
