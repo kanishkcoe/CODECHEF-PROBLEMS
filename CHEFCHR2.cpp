@@ -76,7 +76,6 @@ int countChef(string s)
             word.append(1, s[i + 3]);
             if(isChef(s[i+4]) == 1)
             {
-              cout << s[i + 4];
               i++;
             }
             else
