@@ -12,6 +12,7 @@ int main()
   int K;  // # of workers
   string s; // working month preference of the workers
   int even, odd;  //counts the number of even and odd occurences
+  int evenBusy, oddBusy;
   char buffer;
   int *output;
   cin >> T;
@@ -28,8 +29,12 @@ int main()
     cin >> K;
     cin >> buffer;  //stores newline from the above
     getline(cin, s);
-    if(i == 0)
-      s = buffer + s;
+
+    if(N > K || X == 0)
+    {
+      output[i] = 0;
+      continue;
+    }
     // finding number of even workers and odd workers
     for(int j = 0; j < K; j++)
     {
@@ -38,45 +43,11 @@ int main()
       else
         odd++;
     }
-    for(int k = 0; k < M; k++)
-    {
-      if(k % 2 == 0)
-      {
-        if(X <= odd)
-        {
-          odd -= X;
-          N -= X;
-        }
-        else
-        {
-          if(odd > 0)
-          {
-            N -= odd;
-            odd = 0;
-          }
-        }
-      }
-      else
-      {
-        if(X <= even)
-        {
-          even -= X;
-          N -= X;
-        }
-        else
-        {
-          if(even > 0)
-          {
-            N -= even;
-            even = 0;
-          }
-        }
-      }
-      if(N <= 0)
-        break;
-    }
 
-    if(even <= 0 && odd <= 0)
+    evenBusy = even / X;
+    oddBusy = odd / X;
+
+    if(evenBusy <= M / 2 && oddBusy <= (M + 1) / 2)
     {
       output[i] = 1;
     }
@@ -84,6 +55,15 @@ int main()
     {
       output[i] = 0;
     }
+    // if(M < (evenBusy + oddBusy + 2))
+    // {
+    //   output[i] = 0;
+    // }
+    // else
+    // {
+    //   output[i] = 1;
+    // }
+
   }
 
   for(int i = 0; i < T; i++)
