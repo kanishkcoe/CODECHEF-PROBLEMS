@@ -81,7 +81,7 @@ int main()
         break;
     }
 
-    if(N == 0)
+    if(N <= 0)
     {
       output[i] = 1;
     }
