@@ -36,7 +36,7 @@ int main()
       continue;
     }
     // finding number of even workers and odd workers
-    for(int j = 0; j < K; j++)
+    for(int j = 0; s[j] != NULL; j++)
     {
       if(s[j] == 'E')
         even++;
