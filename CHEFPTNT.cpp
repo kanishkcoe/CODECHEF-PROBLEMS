@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+#define min(a, b) (a <= b)? a : b
+
 using namespace std;
 
 int main()
@@ -26,10 +28,7 @@ int main()
     cin >> M;
     cin >> X;
     cin >> K;
-    cin >> buffer;  //stores newline from the above
-    getline(cin, s);
-    if(i == 0)
-      s = buffer + s;
+    cin >> s;
     if(N > K)
     {
       output[i] = 0;
@@ -43,42 +42,19 @@ int main()
       else
         odd++;
     }
-    for(int k = 0; k < M; k++)
+
+    for(int k = 1; k <= M; k++)
     {
-      if(k % 2 == 0)
+      if( k % 2 == 1 && odd > 0)
       {
-        if(X <= odd)
-        {
-          odd -= X;
-          N -= X;
-        }
-        else
-        {
-          if(odd > 0)
-          {
-            N -= odd;
-            odd = 0;
-          }
-        }
+        N -= min(X, odd);
+        odd -= X;
       }
-      else
+      else if(k % 2 == 0 && even > 0)
       {
-        if(X <= even)
-        {
-          even -= X;
-          N -= X;
-        }
-        else
-        {
-          if(even > 0)
-          {
-            N -= even;
-            even = 0;
-          }
-        }
+        N -= min(X, even);
+        even -= X;
       }
-      if(N <= 0)
-        break;
     }
 
     if(N <= 0)
